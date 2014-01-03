@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-br" ng-app>
+<head>
+  <meta charset="UTF-8">
+  <title>Taller Karma</title>
+  
+  <link rel="stylesheet" href="vendor/bootstrap/themes/bootstrap.yeti.css">
+  <link rel="stylesheet" href="styles/app.css">
+</head>
+<body>
+
+  <!-- Main App view -->
+  <div ui-view></div>
+
+  <!-- This should become a directive -->
+  <div ng-controller="StylesheetCtrl">
+    <link ng-repeat="style in stylesheets" rel="stylesheet" href="{{style.source}}">
+  </div>
+
+  <!-- Auxiliar script loading -->
+  <script src="vendor/jquery/jquery.js"></script>
+  <script src="vendor/jquery/jquery-ui.js"></script>
+  <script src="vendor/Underscore/underscore-min.js"></script>
+  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <!-- <script src="vendor/bootstrap/js/bootstrap.js"></script> -->
+
+  <!-- Settings & Dependency script loading -->
+  <script src="app/config.js"></script>
+  <script src="vendor/angular/angular.js"></script>
+  <script src="vendor/angular-route/angular-route.js"></script>
+  <script src="vendor/ui-router/release/angular-ui-router.js"></script>
+  <script src='https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js'></script>
+  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+
+  <!-- Modules script loading -->
+  <script src="app/util/module.js"></script>
+  <script src="app/util/services.js"></script>
+  <script src="app/util/directives.js"></script>
+
+  <script src="app/persistence/module.js"></script>
+  <script src="app/persistence/services.js"></script>
+
+  <script src="app/karma/module.js"></script>
+  <script src="app/karma/controllers.js"></script>
+
+  <!-- Application script loading -->
+  <script src="app/app.js"></script>
+  <script src="app/controllers.js"></script>
+  <script src="app/router.js"></script>
+
+  <!-- Main application starter -->
+  <script src="app/main.js"></script>
+</body>
+</html>

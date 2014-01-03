@@ -1,0 +1,14 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button ng-click="finally()" class="close">&times;</button>
+            <h3>{{settings.title}}</h3>
+        </div>
+        <div ng-if="settings.content" class="modal-body">
+            {{settings.content}}
+        </div>
+        <div class="modal-footer">
+            <button ng-click="finally()" class="btn btn-sm btn-{{settings.button.type}}" >{{settings.button.text}}</button>
+        </div>
+    </div>
+</div>

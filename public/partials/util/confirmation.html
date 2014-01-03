@@ -1,0 +1,16 @@
+<div class="modal-dialog">
+    <div class="modal-content">
+        <div class="modal-header">
+            <button ng-click="cancel()" class="close">&times;</button>
+            <h3>{{settings.title}}</h3>
+        </div>
+        <div ng-if="settings.message" class="modal-body">
+            <p>{{settings.message}}</p>
+            <p ng-if="settings.subInfo">{{settings.subInfo}}</p>
+        </div>
+        <div class="modal-footer">
+            <button ng-click="confirm()" class="btn btn-sm btn-primary" >Confirm</button>
+            <button ng-click="cancel()" class="btn btn-sm btn-default" >Cancel</button>
+        </div>
+    </div>
+</div>
