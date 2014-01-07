@@ -1,4 +1,4 @@
-team-karma
-==========
+Team Karma
+===========
 
-A open team karma system based in Angular and backended by Firebase.
+An Open Source Team Karma system based in AngularJS and backended by Firebase.
