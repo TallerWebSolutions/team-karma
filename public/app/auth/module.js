@@ -11,7 +11,6 @@ angular.module('auth',
   /* Module Dependencies
   --------------------------- */
   [
-    'firebase',
     'persistence'
   ])
 
