@@ -12,7 +12,8 @@ angular.module('karma',
   --------------------------- */
   [
     'persistence',
-    'firebase'
+    'auth',
+    'karma.reports'
   ])
 
   /* Karma Configuration

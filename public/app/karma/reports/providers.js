@@ -1,14 +1,16 @@
 
 /**
  * ------------------------------------------------------------------------
- * Projects Controllers
+ * Karma Reports Providers
  * ------------------------------------------------------------------------
  */
 
-angular.module('karma')
+angular.module('karma.reports')
   
-  /* Main Karma Controller
-  ------------------------ */
-  .controller('KarmaMainCtrl', function ($scope) {
+  /* Model Factory
+  ---------------- */
+  .factory('Reports', function(persistence, ReportsSampleData) {
+
     
+
   });
