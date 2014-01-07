@@ -1,0 +1,17 @@
+<div class="pull-right user-auth">
+  <div ng-if="!auth.user" class="dropdown">
+    <a class="dropdown-toggle">
+      <span class="glyphicon glyphicon-user"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li><a ng-click="login('github')">GitHub</a></li>
+      <li><a ng-click="login('facebook')">Facebook</a></li>
+    </ul>
+  </div>
+  <div ng-if="auth.user">
+    <span>{{auth.user.name}}</span>
+    <a ng-click="logout()">
+      <span class="glyphicon glyphicon-off"></span>
+    </a>
+  </div>
+</div>
