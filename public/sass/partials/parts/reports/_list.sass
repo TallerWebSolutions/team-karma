@@ -1,0 +1,39 @@
+/*
+ *------------------------------------------------------------------------------
+ * Reports List
+ *------------------------------------------------------------------------------
+ */
+
+@-webkit-keyframes move-up
+  from
+    margin-top: 5px
+  to
+    margin-top: 0px
+
+@-webkit-keyframes move-down
+  from
+    margin-top: 0px
+  to
+    margin-top: 5px
+
+.report-list
+  margin-top: 1em
+  padding-left: 0
+  
+  .panel-heading
+    position: relative
+    .report-status
+      position: absolute
+      top: 0
+      right: 0
+      bottom: 0
+
+  .affected-members
+    margin-right: 40px
+    .member
+      height: 36px
+      width: 36px
+      margin-right: 2px
+      margin-bottom: 2px
+      float: left
+      background-color: #ccc
