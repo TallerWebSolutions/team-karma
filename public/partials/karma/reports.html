@@ -1,0 +1,36 @@
+
+<div class="container" id="main-content">
+
+  <div class="pull-right">
+    <small class="button-description text-muted">1 weeks</small>
+    <div class="btn-group btn-group-sm">
+      <button class="btn btn-default"><span class="glyphicon glyphicon-calendar"></span></button>
+    </div>
+  </div>
+
+  <div class="btn-group btn-group-sm">
+    <button class="btn btn-default btn-primary">
+      <span class="glyphicon glyphicon-bullhorn"></span>
+      <span>Report</span>
+    </button>
+  </div>
+  <small class="button-description text-muted">4 remaining actions</small>
+
+  <ul class="report-list row">
+    <li ng-repeat="report in reports | TimePeriod" class="report col-lg-3 col-md-4">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <button class="btn btn-sm report-status pull-right" ng-class="{'btn-success': report.kind == 'positive', 'btn-danger': report.kind == 'negative'}">
+            <span class="glyphicon " ng-class="{'glyphicon-thumbs-up': report.kind == 'positive', 'glyphicon-thumbs-down': report.kind == 'negative'}"></span>
+          </button>
+          <div class="affected-members clearfix">
+            <div ng-repeat="member in report.target" class="member">{{member}}</div>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="description">{{report.description}}</div>
+        </div>
+      </div>
+    </li>
+  </ul>
+</div>
