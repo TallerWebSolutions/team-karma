@@ -39,6 +39,18 @@ angular.module('Util')
     };
 
     /**
+     * Get a namespace string hierarchy.
+     */
+    Util.namespaceHierarchy = function(namespace) {
+      return namespace.split('.').map(function (name, index, names) {
+        names.slice(0, index).forEach(function (parentName) {
+          name = parentName + '.' + name;
+        });
+        return name;
+      });
+    };
+
+    /**
      * Transform a string into a machine name, following rules.
      * @param  {String} string The text to be transformed.
      * @return {Object}        A object of options.
