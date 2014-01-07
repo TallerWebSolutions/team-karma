@@ -9,6 +9,24 @@
 </head>
 <body>
 
+  <div ui-view="header">
+    <div class="jumbotron">
+      <h1 class="container">
+        <img src="images/brand.png" id="brand">
+        Karma <small>run for it!</small></h1>
+    </div>
+
+    <nav class="navbar navbar-custom" role="navigation">
+      <div class="container">
+        <ul class="nav navbar-nav">
+          <li><a util-sref="karma.race">Race</a></li>
+          <li><a util-sref="karma.reports">Reports</a></li>
+        </ul>
+        <user-auth user="{{auth.user}}" />
+      </div>
+    </nav>
+  </div>
+
   <!-- Main App view -->
   <div ui-view></div>
 
@@ -21,7 +39,8 @@
   <script src="vendor/jquery/jquery.js"></script>
   <script src="vendor/jquery/jquery-ui.js"></script>
   <script src="vendor/Underscore/underscore-min.js"></script>
-  <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script src='vendor/firebase/firebase.js'></script>
+  <script src='vendor/firebase/firebase-simple-login.js'></script>
   <!-- <script src="vendor/bootstrap/js/bootstrap.js"></script> -->
 
   <!-- Settings & Dependency script loading -->
@@ -29,19 +48,34 @@
   <script src="vendor/angular/angular.js"></script>
   <script src="vendor/angular-route/angular-route.js"></script>
   <script src="vendor/ui-router/release/angular-ui-router.js"></script>
-  <script src='https://cdn.firebase.com/libs/angularfire/0.5.0/angularfire.js'></script>
-  <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+  <script src='vendor/angularFire/angularfire.js'></script>
+  <script src="vendor/angular-ui-bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
 
   <!-- Modules script loading -->
   <script src="app/util/module.js"></script>
   <script src="app/util/services.js"></script>
+  <script src="app/util/controller.js"></script>
   <script src="app/util/directives.js"></script>
 
   <script src="app/persistence/module.js"></script>
   <script src="app/persistence/services.js"></script>
 
+  <script src="app/auth/module.js"></script>
+  <script src="app/auth/router.js"></script>
+  <script src="app/auth/providers.js"></script>
+  <script src="app/auth/controllers.js"></script>
+  <script src="app/auth/directives.js"></script>
+
   <script src="app/karma/module.js"></script>
+  <script src="app/karma/router.js"></script>
   <script src="app/karma/controllers.js"></script>
+
+  <script src="app/karma/reports/module.js"></script>
+  <!-- <script src="app/karma/reports/router.js"></script> -->
+  <script src="app/karma/reports/sample-data.js"></script>
+  <script src="app/karma/reports/filters.js"></script>
+  <script src="app/karma/reports/providers.js"></script>
+  <script src="app/karma/reports/controllers.js"></script>
 
   <!-- Application script loading -->
   <script src="app/app.js"></script>
