@@ -36,7 +36,7 @@ angular.module('persistence')
   /**
    * Persistence responsible factory.
    */
-  .factory('persistence', function($firebase, persistenceConfig, Util) {
+  .factory('persistence', function($firebase, $firebaseAuth, persistenceConfig, Util) {
 
     // Get Firebase main URL from provider.
     var _url = persistenceConfig.getURL();
@@ -52,10 +52,20 @@ angular.module('persistence')
       getReference: function(persistenceMap) {
 
         // Construct the reference URL.
-        var url = _url + '/' + persistenceMap;
+        var url = _url + (persistenceMap ? '/' + persistenceMap : '');
 
         // Return a cachable reference.
         return _refs[url] = _refs[url] || new Firebase(url);
+      },
+      /**
+       * Authenticate.
+       */
+      auth: function(persistenceMap) {
+
+        // Get a cachable reference.
+        var ref = this.getReference(persistenceMap);
+
+        return $firebaseAuth(ref);
       },
       /**
        * Extends a Firebase object with custom methods.
