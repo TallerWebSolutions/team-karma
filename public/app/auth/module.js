@@ -24,7 +24,6 @@ angular.module('auth',
     // Listen for authentication login.
     $rootScope.$on('$firebaseAuth:login', function (e, user) {
       // Redirect to home or to previously required state.
-      
     });
 
     // Listen for authentication logout.

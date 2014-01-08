@@ -10,16 +10,16 @@ angular.module('auth')
 
   /* Application Start Listener
   ----------------------------- */
-  .run(function ($rootScope, $state, Util) {
+  .run(function ($rootScope, $state, Util, authentication) {
 
     // Listen for state changes.
     $rootScope.$on('$stateChangeStart', function (e, to, toParams, from, fromParams) {
 
-      // Construct the state hierarchi.
+      // Construct the state hierarchy.
       var states = Util.namespaceHierarchy(to.name);
 
       // Check for authenticated user.
-      if (!$rootScope.auth || !$rootScope.auth.user) {
+      if (!authentication || !authentication.user) {
 
         // Default to no requirement.
         var requireLogin = false;
