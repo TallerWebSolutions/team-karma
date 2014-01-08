@@ -32,7 +32,6 @@ angular.module('karma')
       // Define Karma reports state.
       .state('karma.reports', {
         url: '/reports',
-        requireLogin: true,
         controller: 'KarmaReportsCtrl',
         templateUrl: 'partials/karma/reports.html'
       });

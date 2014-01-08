@@ -18,8 +18,10 @@ angular.module('karma',
 
   /* Karma Configuration
   ---------------------------- */
-  .config(function (persistenceConfigProvider) {
+  .config(function (persistenceProvider) {
 
     // Set base persistence path.
-    persistenceConfigProvider.setUrl('https://taller-karma.firebaseio.com/dev');
+    persistenceProvider.setConnection({
+      url: 'https://taller-karma.firebaseio.com/dev'
+    });
   });
